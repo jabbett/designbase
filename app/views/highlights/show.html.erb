@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transcript:</strong>
+  <%= @highlight.transcript %>
+</p>
+
+<p>
+  <strong>Selection:</strong>
+  <%= @highlight.selection %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @highlight.content %>
+</p>
+
+<%= link_to 'Edit', edit_highlight_path(@highlight) %> |
+<%= link_to 'Back', highlights_path %>
