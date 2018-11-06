@@ -1,50 +1,58 @@
-Designbase
-================
+# Designbase
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Designbase is a repository for collecting and analyzing qualitative user
+research. Load transcripts, highlight key statements, then tag and organize
+them into insights.
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
+## Project goals
 
-Problems? Issues?
------------
+There are many fine commercial products for organizing one's UX research,
+from flexible & generic webapps to fully professional-grade QDAS systems.
+If any of these satisfy your needs, use them by all means!
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+* Airtable
+* NomNom
+* etc.
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+This project, however, aims to achieve a specific set of goals:
 
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+* Free and open source
+* Productively usable
+* Compatible with the techniques I learned from Adaptive Path, by which one highlights the actions, challenges, and emotions found in interview transcripts and then clusters those highlights into insights suitable for personas and process maps.
 
-Ruby on Rails
--------------
+## Software requirements
 
 This application requires:
 
 - Ruby 2.5.3
 - Rails 5.2.1
+- PostgreSQL
 
 Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
 
 Getting Started
 ---------------
 
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
+TBD
 
 Contributing
 ------------
 
-Credits
--------
+We encourage you to contribute to Designbase:
+
+* Share relevant user research
+* Submit a short-form creative brief with measurable goals to guide new feature design
+* Report an issue
+* Fix an existing issue
+* Contribute to documentation
+* Translate the interface or documentation
+* Contribute to the code base
+
+Everyone interacting in the Designbase project is expected to follow the [Contributor Covenant code of conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct)
 
 License
 -------
+
+Designbase is licensed under the [GNU Affero General Public License](https://github.com/jabbett/designbase/blob/master/LICENSE)
