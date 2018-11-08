@@ -24,7 +24,7 @@ class HighlightsController < ApplicationController
   # POST /highlights
   # POST /highlights.json
   def create
-    @highlight = Highlight.new(highlight_params)
+    @highlight = @container.highlights.new(highlight_params)
 
     respond_to do |format|
       if @highlight.save
@@ -69,6 +69,6 @@ class HighlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def highlight_params
-      params.require(:highlight).permit(:transcript_id, :selection, :content)
+      params.require(:highlight).permit(:selection, :content)
     end
 end

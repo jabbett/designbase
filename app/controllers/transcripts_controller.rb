@@ -10,6 +10,7 @@ class TranscriptsController < ApplicationController
   # GET /transcripts/1
   # GET /transcripts/1.json
   def show
+    @available_tags = TagDefinition.all
   end
 
   # GET /transcripts/new
@@ -24,11 +25,11 @@ class TranscriptsController < ApplicationController
   # POST /transcripts
   # POST /transcripts.json
   def create
-    @transcript = Transcript.new(transcript_params)
+    @transcript = @container.transcripts.new(transcript_params)
 
     respond_to do |format|
       if @transcript.save
-        format.html { redirect_to @transcript, notice: 'Transcript was successfully created.' }
+        format.html { redirect_to @transcript, notice: "Transcript saved." }
         format.json { render :show, status: :created, location: @transcript }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class TranscriptsController < ApplicationController
   def update
     respond_to do |format|
       if @transcript.update(transcript_params)
-        format.html { redirect_to @transcript, notice: 'Transcript was successfully updated.' }
+        format.html { redirect_to @transcript, notice: 'Transcript updated.' }
         format.json { render :show, status: :ok, location: @transcript }
       else
         format.html { render :edit }
@@ -69,6 +70,6 @@ class TranscriptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def transcript_params
-      params.require(:transcript).permit(:participant_id, :interviewed_at, :description, :content)
+      params.require(:transcript).permit(:interviewed_at, :description, :content)
     end
 end

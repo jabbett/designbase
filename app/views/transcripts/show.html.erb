@@ -1,24 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="transcript-header bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <%= link_to 'Participants', participants_path %>
+        <h3><%= link_to @transcript.participant.name, @transcript.participant %> &rsaquo; <%= @transcript.interviewed_at.strftime("%Y %b %e") %></h3>
+        <div class="text-muted"><%= @transcript.description %></div>
+      </div>
+      <div class="col-md-3 d-flex align-items-center">
+        <div class="flex-grow-1">
+          <%= link_to 'Edit transcript', edit_transcript_path(@transcript), class: 'btn btn-sm btn-block btn-secondary' %>
+          <button class="btn btn-sm btn-block btn-secondary" id="btn-highlight">Highlight</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Participant:</strong>
-  <%= @transcript.participant %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="transcript-content" id="transcript"><%= @transcript.content %></div>
+    </div>
+    <div class="col-md-5">
+      <%= form_with(id: 'new_highlight', model: Highlight.new, url: [@transcript, Highlight.new]) do |f| %>
+        <%= f.hidden_field :selection %>
+        <%= f.hidden_field :content %>
+      <% end %>
 
-<p>
-  <strong>Interviewed at:</strong>
-  <%= @transcript.interviewed_at %>
-</p>
+      <%= render @transcript.highlights %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @transcript.description %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @transcript.content %>
-</p>
-
-<%= link_to 'Edit', edit_transcript_path(@transcript) %> |
-<%= link_to 'Back', transcripts_path %>
+      <pre></pre>
+    </div>
+  </div>
+</div>
